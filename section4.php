@@ -15,8 +15,11 @@
 		$sql = "INSERT INTO place_review (name,email,visited_place,date_of_visit,experience,review) VALUES ('$name','$email','$place','$date','$message','$rating')";
 		$run = mysqli_query($conn,$sql);
 		if($run){
+			$_SESSION['name']=$name;
+				header("refresh:0; url=main.php");
+				$message = $_SESSION['name']." ,Thank you for your reviews.";
+				echo "<script type='text/javascript'>alert('$message');</script>";
 			
-			header("refresh:0;url=main.php");
 		}
 		
 	 
@@ -26,13 +29,14 @@
 <!DOCTYPE html>
 <html lang="en">
  
-<body>  
- <section class="section contact-me" data-section="section4">
+<body style="margin-top:-70px">  
+ <section class="section contact-me" style="background-color:white" data-section="section4">
         <div class="container">
           <div class="section-heading">
-            <h2>Reviews</h2>
+            <h1 style="color:DarkRed"><b>Reviews</b></h1>
             <div class="line-dec"></div>
-            <span>As a visitor of Bangladesh , please give us review about our website as well as the place that you have visited from the help of this site </span>
+            <span style="color:Black"><b>As a visitor of Bangladesh , please give us review about
+			our website as well as the place that you have visited from the help of this site.</b></span>
           </div>
           <div class="row">
             <div class="right-content">
@@ -59,7 +63,7 @@
                     </div>
 					<div class="col-md-6">
                       <fieldset>
-                        <input  style="background-color:#2F4F4F" name="date" type="date" class="form-control" required placeholder="Date Of Visit" />
+                        <input  style="background-color:#2F4F4F" name="date" type="date" class="form-control" required placeholder="Date of visit" />
                       </fieldset>
                     </div>
                     <div class="col-md-12">

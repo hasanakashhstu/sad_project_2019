@@ -15,26 +15,46 @@
     <link rel="stylesheet" href="assets/css/tooplate-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
+	<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+</style>
  
 </head>
 <body>
- <div id="page-wraper">
+ <div id="page-wraper" style="background-color:white">
        <div class="side">
         <div class="responsive-nav">
         <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
+        <div id="menu" class="menu" style="background-color:GREEN">
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
 		  
-		  <div class="author-content">
-              <h4>Let's Travel Bangladesh</h4>
-              <span>side scene of beautiful bangladesh</span></br></br></br>
-
-           </div>
+		  <div class="image">
+              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+            </div>
+            <div class="author-content">
+              <h4 style="color:white">Let's Travel Bangladesh</h4>
+              <span style="color:black"><b>Site Scenes Of Beautiful Bangladesh</b></span>
+            </div></br>
+		  
 		  
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php">HOME</a>
+			  <li style="color:sparkleBlue"><a href="main.php"> HOME</a></li>
                	    
               </ul>
             </nav>
@@ -45,7 +65,7 @@
  <section class="section about-me" data-section="section1">
         <div class="container">
 		</br></br>
-	<h1>Rating</h1>
+	<h2 style='color:DarkRed'><b>Ratings of different sites</b></h2>
 <?php
 $connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
 if(!$connect){
@@ -53,18 +73,19 @@ if(!$connect){
 }
 mysqli_select_db($connect,"place");
 $results = mysqli_query($connect,"SELECT place_name,rating FROM place");
-echo "<table border='3'>
+echo "<table style='border:2px solid DarkRed;background-color:White;margin-top:20px'>
 <tr>
-<th>Beautiful Places Of Bangladesh </th>
-<th>Average Rating(Provided By The Users)</th>
+<th><p style='padding:10px;color:DarkRed'>Beautiful Places Of Bangladesh</p></th>
+<th><p style='padding:10px;color:DarkRed'>Average Rating by visitors</p></th>
+
 </tr>";
 while($row = mysqli_fetch_array($results) ){
 	$t=$row['rating'];
 	   echo"<tr>";
-	   echo "<td>".$row['place_name']."</td>";
-	   echo "<td>";
+	   echo "<td><b>".$row['place_name']."</b></td>";
+	   echo "<td><b>";
 	      for ($x = 1; $x <= $t; $x++) {
-    echo "*";
+    echo "* ";
 }
 	   echo"</td>";
 	   echo"</tr>";

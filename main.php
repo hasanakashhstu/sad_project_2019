@@ -16,24 +16,25 @@
     <link rel="stylesheet" href="assets/css/lightbox.css" />
   </head>
   <body>
-  <div id="page-wraper">
-  <?php
+  <div id="page-wraper" style="background-color:white">
+	<?php
 	 include_once 'sidebar.php';
 	 ?>
 	 <?php
 	 include_once 'menubar.php';
 	 ?></br></br>
+	
 	 <?php
 	 include_once 'section2.php';
 	 ?></br></br>
 	 <?php
-	 include_once 'section3.php';
-	 ?></br></br>
-	 <?php
 	 include_once 'section4.php';
 	 ?></br></br>
-	  <?php
+	 <?php
 	 include_once 'section5.php';
+	 ?></br></br>
+	  <?php
+	 include_once 'section3.php';
 	 ?></br></br>
 	 <?php
 	 include_once 'javascript.php';

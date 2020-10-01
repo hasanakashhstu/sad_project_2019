@@ -14,7 +14,7 @@
 		if ($count>0)
 			{
 				$_SESSION['email']=$email;
-				header("refresh:0; url=Ad_Place.php");
+				header("refresh:0; url=task.php");
 				$message = $_SESSION['email']." ,You are logged In now...";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 			}
@@ -29,12 +29,33 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<style>
+input[type=text],select{
+	border:2px solid DarkRed;
+	height:40px;
+	color:White;
+	font-size:12px;
+	text-align:left;
+	background-color:Black;
+	margin-right:75px;
+	width:68%;
+}
+input[type=password],select{
+	border:2px solid DarkRed;
+	height:40px;
+	font-size:12px;
+	margin-right:75px;
+	width:68%;
+}
+</style>
+</head>
  
 <body>  
  <section class="section contact-me" data-section="section5">
         <div class="container">
 	<div class="section-heading">
-            <h2 style="color:dodgerblue">Admin Login</h2>
+            <h2 style="color:DarkRed">Admin Login</h2>
             <div class="line-dec"></div>
           <div class="row">
             <div class="right-content">
@@ -44,18 +65,18 @@
                     <div class="col-md-12">
                       <fieldset>
                         <input style="background-color:#2F4F4F;color:white" name="email"  type="text" class="form-control"
-                          id="name" placeholder="Email" required="" />
+                          id="name" placeholder="Enter Your Email..." required="" />
                       </fieldset>
                     </div>
                     <div class="col-md-12">
                       <fieldset>
-                        <input  style="background-color:#2F4F4F; color:white" name="password" type="text" class="form-control"
-                          id="email" placeholder="Password..." required>
+                        <input  style="background-color:#2F4F4F; color:white" name="password" type="password" class="form-control"
+                          id="email" placeholder="Enter Your Password..." required>
                       </fieldset>
 					  </div>
                     <div class="col-md-12">
                       <fieldset>
-                        <button style="text-align:right;background-color:#2F4F4F;margin-top:4px"type="submit" target="_blank" name="submit_log" id="form-submit" class="button">
+                        <button style="text-align:right;font-weight:bold;background-color:#2F4F4F;margin-top:4px"type="submit" target="_blank" name="submit_log" id="form-submit" class="button">
                           Log In
                         </button>
                       </fieldset>

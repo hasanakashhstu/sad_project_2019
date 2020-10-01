@@ -2,40 +2,40 @@
 <html lang="en">
   
 <body>  
-<section class="section my-services" data-section="section2">
+<section class="section my-services" style="background-color:SLATEGREY" data-section="section2">
         <div class="container">
           <div class="section-heading">
-            <h2>Support Groups & Contacts</h2>
+           <h1><b style="color:darkred">Support Groups & Contacts</b></h1>
             <div class="line-dec"></div>
-            <span>Praesent posuere fringilla elit, non maximus tellus posuere nec. Nunc eu sapien nec est elementum sodales.</span>
+            <span><b style="color:black">Here, you can find all the groups and events of different tourists spots with information and contact numbers.</b></span>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="service-item">
                <!-- <i class="fa fa-area-chart"></i>-->
-                <h4><a href="event.php" style="color:blue">Group events</a></h4>
-                <p>Donec sit amet tempor quam. Maecenas nec aliquam leo, sed tincidunt urna.</p>
+                <h4><a href="event.php" style="color:DarkRed">Group Events</a></h4>
+                <p style="color:black"><b>Need A Group to Travel? Click Group events</b></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="service-item">
                 <!--<i class="fa fa-check-square-o"></i>-->
-                <h4><a href="agency.php" style="color:blue">Agency</a></h4>
-                <p>Etiam at porta nulla, et euismod enim. Nullam semper ipsum et dui scelerisque.</p>
+                <h4><a href="agency.php" style="color:DarkRed">Agencies</a></h4>
+                <p style="color:black"><b>Different Agencies can also take you there.</b></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="service-item">
               <!--<i class="fa fa-question-circle"></i>-->
-                <h4><a href="emergency contact.php" style="color:blue">Emergency Contacts</a></h4>
-                <p>Phasellus orci leo, elementum ac risus id, euismod porta lorem. Quisque feugiat.</p>
+                <h4><a href="emergency contact.php" style="color:DarkRed">Emergency Contacts</a></h4>
+                <p style="color:black"><b>Here are some Emergency Contact Numbers.</b></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="service-item">
                 <!--<i class="fa fa-support"></i>-->
-                <h4><a href="rating.php" style="color:blue">Rating</a></h4>
-                <p>Mauris eu est vitae erat condimentum pellentesque. Fusce vehicula nunc.</p>
+                <h4><a href="rating.php" style="color:DarkRed">Rating</a></h4>
+                <p style="color:black"><b>Check out the ratings of different places provided by others.</b></p>
               </div>
             </div>
           </div>

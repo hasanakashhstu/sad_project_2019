@@ -4,7 +4,7 @@
     
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Sea beaches</title>
+    <title>Agencies</title>
     <meta name="description" content="" />
     <meta name="author" content="Tooplate" />
     <!-- Bootstrap core CSS -->
@@ -15,26 +15,44 @@
     <link rel="stylesheet" href="assets/css/tooplate-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
+	<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+</style>
  
 </head>
 <body>
- <div id="page-wraper">
+ <div id="page-wraper" style="background-color:white">
        <div class="side">
         <div class="responsive-nav">
         <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
+        <div id="menu" class="menu" style="background-color:GREEN">
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
-		  
-		  <div class="author-content">
-              <h4>Let's Travel Bangladesh</h4>
-              <span>side scene of beautiful bangladesh</span></br></br></br>
-
-           </div>
+		  <div class="image">
+              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+            </div>
+            <div class="author-content">
+              <h4 style="color:white">Let's Travel Bangladesh</h4>
+              <span style="color:black"><b>Site Scenes Of Beautiful Bangladesh</b></span>
+            </div></br>
 		  
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php">HOME</a>
+			  <li style="color:sparkleBlue"><a href="main.php">HOME</a></br>
                	    
               </ul>
             </nav>
@@ -45,30 +63,31 @@
    <section class="section about-me" data-section="section1">
         <div class="container">
 		</br></br>
-           <?php
-$connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
-if(!$connect){
-	die(mysqli_error());	
-}
-mysqli_select_db($connect,"agencies");
-$results = mysqli_query($connect,"SELECT * FROM agencies");
-echo "<table border='3'>
-<tr>
-<th>Agency Name</th>
-<th>Contact</th>
-<th>Email</th>
-<th>Availabel link for details information</th>
-</tr>";
-while($row = mysqli_fetch_array($results) ){
-	   echo"<tr>";
-	   echo "<td>".$row['agency_name']."</td>";
-	   echo "<td>".$row['contact']."</td>";
-	   echo "<td>".$row['email']."</td>";
-	   echo "<td>".$row['link']."</td>";
-	   echo"</tr>";
-	   
-}
-echo"</table>";
+		<h2 style='color:DarkRed'><b>Agencies</b></h2>
+<?php
+				$connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
+				if(!$connect){
+				die(mysqli_error());	
+				}
+					mysqli_select_db($connect,"agencies");
+					$results = mysqli_query($connect,"SELECT * FROM agencies");
+					echo "<table style='border:2px solid DarkRed;background-color:White;margin-top:20px'>
+					<tr>
+					<th><p style='padding:10px;color:DarkRed'>Agency Name</p></th>
+					<th><p style='padding:10px;color:DarkRed'>Contact</p></th>
+					<th><p style='padding:10px;color:DarkRed'>Email</p></th>
+					<th><p style='padding:10px;color:DarkRed'>Available link</p></th>
+					</tr>";
+					while($row = mysqli_fetch_array($results) ){
+						   echo"<tr>";
+						   echo "<td><b style='color:black'>".$row['agency_name']."<b/></td>";
+						   echo "<td><b style='color:black'>".$row['contact']."</b></td>";
+						   echo "<td><b style='color:black'>".$row['email']."</b></td>";
+						   echo "<td><b style='color:black;text-align:Justify'>".$row['link']."</b></td>";
+						   echo"</tr>";
+						   
+					}
+					echo"</table>";
 ?>
           </div>
        

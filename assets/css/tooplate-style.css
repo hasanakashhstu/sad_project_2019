@@ -14,7 +14,7 @@ body {
 }
 
 #page-wraper {
-    background: #4AA0DD no-repeat center center fixed;
+    background: #4AA0DD15 no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -171,6 +171,7 @@ html {
 
 .menu .social-network ul li {
     margin: 0 3px;
+	background-color: #2279BD;
 }
 
 .menu .social-network ul li a {
@@ -179,7 +180,7 @@ html {
     display: inline-block;
     text-align: center;
     line-height: 40px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #2279BD;
     color: #fff;
     font-size: 14px;
     transition: all 0.5s;
@@ -537,19 +538,21 @@ figure.snip1321 * {
   box-sizing: padding-box;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  
 }
 figure.snip1321 figcaption {
   top: 50%;
   left: 20px;
   right: 20px;
   position: absolute;
+  
   opacity: 0;
   z-index: 1;
 }
 figure.snip1321 h4 {
-    margin-top: 15px;
+    margin-top: 0px;
   margin-bottom: 5px;
-  color: #232323;
+  color: Lightblue;
 }
 figure.snip1321 span {
     font-size: 14px;
@@ -561,8 +564,8 @@ figure.snip1321 i {
   position: relative!important;
   font-size: 18px;
   background-color: #2279BD;
-  width: 40px;
-  height: 40px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
   text-align: center;
   line-height: 40px;
@@ -601,6 +604,7 @@ figure.snip1321.hover figcaption {
   opacity: 1;
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
+  background-color:transparent;
 }
 figure.snip1321:hover:after,
 figure.snip1321.hover:after {

@@ -18,21 +18,24 @@
  
 </head>
 <body>
- <div id="page-wraper">
+ <div id="page-wraper" style="background-color:white">
+ 
        <div class="side">
         <div class="responsive-nav">
         <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
+        <div id="menu" class="menu" style="background-color:GREEN">
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
+            <div class="image">
+              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+            </div>
 		  <div class="author-content">
-              <h4>Let's Travel Bangladesh</h4>
-              <span>site scene of beautiful bangladesh</span></br></br></br>
-
-           </div>
+              <h4 style="color:white">Let's Travel Bangladesh</h4>
+              <span style="color:black"><b>Site Scenes Of Beautiful Bangladesh</b></span>
+            </div>
             <nav class="main-nav"  role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php" style="color:DarkRed"><b>HOME</b></a>
+			  <li><a href="main.php" style="color:SparkleBlue">HOME</a><br></br>
                	    <?php
 
 
@@ -40,7 +43,7 @@
 $result = mysqli_query($conn,"select * FROM  event_group");
 while($row = mysqli_fetch_array($result) 
 	){
-                echo"<li><a href=#".$row['event_name'].">".$row['event_name']."</a></li>";
+                echo"<li style='color:SparkleBlue'><a href=#".$row['event_name'].">".$row['event_name']."</a></li>";
 				}
 ?>
               </ul>
@@ -58,12 +61,12 @@ while($row = mysqli_fetch_array($result)
 $result = mysqli_query($conn,"select * FROM event_group");
 while($row = mysqli_fetch_array($result) 
 	){
-		 echo "<h2 align='center' id=".$row['event_name']."><p style='color:Black'><b>".$row['event_name']."</h2></p></br>";
-		 echo "<p style='color:black';text-align:left;margin-left:20px'>".$row['event_info']."</p>";
-		 echo "<p style='color:black';text-align:left;margin-left:20px'><b style='color:DarkRed'>Website/link:</b>"."&nbsp&nbsp".$row['link']."</p>";
-		 echo "<p style='color:black';text-align:left;margin-left:20px'><b style='color:DarkRed'>Contact</b> :"."&nbsp".$row['contact']."</p>";
-		 echo "<p style='color:black';text-align:left;margin-left:20px'><b style='color:DarkRed'>Email</b> :"."&nbsp".$row['email']."</p>";
-
+		 echo "<h2 align='center' id=".$row['event_name']."></br><p style='color:DarkRed'><b>".$row['event_name']."</b></h2></p>";
+		 echo "<p style='color:black;text-align:Justify;margin-left:20px'><b >".$row['event_info']."</b></p>";
+		 echo "<p style='color:black;text-align:Justify;margin-left:20px'><b style='color:DarkRed'>Website/link:</b><b>".$row['link']."</b></p>";
+		 echo "<p style='color:black;text-align:Justify;margin-left:20px'><b style='color:DarkRed'>Contact</b><b>:"."&nbsp".$row['contact']."</b></p>";
+		 echo "<p style='color:black;text-align:Justify;margin-left:20px'><b style='color:DarkRed'>Email</b><b>:"."&nbsp".$row['email']."</b></p></br>";
+		echo "<p style='color:black'><b>__________________________________________________________________________________________</b></p>";
 }
 ?>
           </div>
