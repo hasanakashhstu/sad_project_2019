@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Emergency contact</title>
@@ -35,7 +35,7 @@ input[type=submit],select{
 	margin-right:5px;
 	color:color;
 	height:40px;
-	
+
 }
 </style>
 </head>
@@ -48,7 +48,7 @@ input[type=submit],select{
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
 		  <div class="image">
-              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+              <a href="#"><img src="images/bangladesh.jpg" alt="Bangladesh" /></a>
             </div>
             <div class="author-content">
               <h4 style="color:white">Let's Travel Bangladesh</h4>
@@ -62,13 +62,13 @@ input[type=submit],select{
 			</div>
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			   <li style="color:SparkleBlue"><a href="main.php">HOME</a><br></br>
+			   <li style="color:SparkleBlue"><a href="index.php">HOME</a><br></br>
                	    <?php
 
 
  mysqli_select_db($conn,"place");
 $result = mysqli_query($conn,"select * FROM place");
-while($row = mysqli_fetch_array($result) 
+while($row = mysqli_fetch_array($result)
 	){
                 echo"<li><a href=#".$row['place_name'].">".$row['place_name']."</a></li>";
 				}
@@ -86,7 +86,7 @@ while($row = mysqli_fetch_array($result)
 
  mysqli_select_db($conn,"place");
 $result = mysqli_query($conn,"select * FROM place");
-while($row = mysqli_fetch_array($result) 
+while($row = mysqli_fetch_array($result)
 	){
 		 echo"<h1 align='center' id=".$row['place_name']."><p style='color:Black'><b style='color:DarkRed'>".$row['place_name']."</b></p></h1>";
 		 echo "<h3><b style='color:DarkRed'>Emergency Contact</b></h3>";
@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($result)
 }
 ?>
           </div>
-       
+
 		</section>
 </div>
 

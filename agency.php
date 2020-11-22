@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Agencies</title>
@@ -32,7 +32,7 @@
 			  background-color: #dddddd;
 			}
 </style>
- 
+
 </head>
 <body>
  <div id="page-wraper" style="background-color:white">
@@ -43,17 +43,17 @@
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
 		  <div class="image">
-              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+              <a href="#"><img src="images/bangladesh.jpg" alt="Bangladesh" /></a>
             </div>
             <div class="author-content">
               <h4 style="color:white">Let's Travel Bangladesh</h4>
               <span style="color:black"><b>Site Scenes Of Beautiful Bangladesh</b></span>
             </div></br>
-		  
+
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li style="color:sparkleBlue"><a href="main.php">HOME</a></br>
-               	    
+			  <li style="color:sparkleBlue"><a href="index.php">HOME</a></br>
+
               </ul>
             </nav>
           </div>
@@ -67,7 +67,7 @@
 <?php
 				$connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
 				if(!$connect){
-				die(mysqli_error());	
+				die(mysqli_error());
 				}
 					mysqli_select_db($connect,"agencies");
 					$results = mysqli_query($connect,"SELECT * FROM agencies");
@@ -85,12 +85,12 @@
 						   echo "<td><b style='color:black'>".$row['email']."</b></td>";
 						   echo "<td><b style='color:black;text-align:Justify'>".$row['link']."</b></td>";
 						   echo"</tr>";
-						   
+
 					}
 					echo"</table>";
 ?>
           </div>
-       
+
 		</section>
 </div>
 

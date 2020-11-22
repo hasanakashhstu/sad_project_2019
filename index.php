@@ -23,7 +23,7 @@
 	 <?php
 	 include_once 'menubar.php';
 	 ?></br></br>
-	
+
 	 <?php
 	 include_once 'section2.php';
 	 ?></br></br>

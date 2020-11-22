@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Sea beaches</title>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/tooplate-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
- 
+
 </head>
 <body>
  <div id="page-wraper">
@@ -25,17 +25,17 @@
         <div id="menu" class="menu">
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
-		  
+
 		  <div class="author-content">
               <h4>Let's Travel Bangladesh</h4>
               <span>side scene of beautiful bangladesh</span></br></br></br>
 
            </div>
-		  
+
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php">HOME</a>
-               	    
+			  <li><a href=".php">HOME</a>
+
               </ul>
             </nav>
           </div>
@@ -47,7 +47,7 @@
            <?php
 $connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
 if(!$connect){
-	die(mysqli_error());	
+	die(mysqli_error());
 }
 mysqli_select_db($connect,"agencies");
 $results = mysqli_query($connect,"SELECT * FROM agencies");
@@ -65,12 +65,12 @@ while($row = mysqli_fetch_array($results) ){
 	   echo "<td>".$row['email']."</td>";
 	   echo "<td>".$row['link']."</td>";
 	   echo"</tr>";
-	   
+
 }
 echo"</table>";
 ?>
           </div>
-       
+
 		</section>
 </div>
 

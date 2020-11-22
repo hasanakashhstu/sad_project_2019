@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Hills & Mountains</title>
@@ -38,10 +38,10 @@ input[type=submit],select{
 	margin-right:5px;
 	color:White;
 	height:40px;
-	
+
 }
 </style>
- 
+
 </head>
 <body>
  <div style="background-color:white">
@@ -63,13 +63,13 @@ input[type=submit],select{
 
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php" style="color:SparkleBlue">HOME</a><br></br>
+			  <li><a href="index.php" style="color:SparkleBlue">HOME</a><br></br>
                	    <?php
 
 
  mysqli_select_db($conn,"place");
 $result = mysqli_query($conn,"select * FROM place where cate_id=2");
-while($row = mysqli_fetch_array($result) 
+while($row = mysqli_fetch_array($result)
 	){
                 echo"<li style='color:SparkleBlue'><a href=#".$row['place_name'].">".$row['place_name']."</a></li>";
 				}
@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($result) )
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-13px'><b style='color:DarkRed'>Police Station : </b><b>"."&nbsp".$row['police']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Hospital : </b><b>".$row['hospital']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Fire-Service and Rescue : </b><b>".$row['fire_service']."</b></p>";
-			 
+
 				$image = $row['image'];
 				echo '<img src="image/'.$image.'" height="500" width="100%">"</br></br></br>';
 				echo "<p style='color:black'>__________________________________________________________________________________</p>";
@@ -108,7 +108,7 @@ while($row = mysqli_fetch_array($result) )
 ?>
 <br>
           </div>
-       
+
 		</section>
 </div>
 

@@ -6,17 +6,17 @@
 	if($check==true){
 	}
 	else{
-		header("refresh:0; url=main.php");
+		header("refresh:0; url=index.php");
 		$message = "Session Out.You need to log in first";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 	if(isset($_POST['submit_log']))
-	{ 
+	{
 			$filename = $_FILES['uploadfile']['name'];
 			$filetmpname = $_FILES['uploadfile']['tmp_name'];
 			$folder = 'image/';
 			move_uploaded_file($filetmpname, $folder.$filename);
-		
+
 		$cate_id = mysqli_real_escape_string($db_con,$_POST['cate_id']);
 		$place_name = mysqli_real_escape_string($db_con,$_POST['place_name']);
 		$region = mysqli_real_escape_string($db_con,$_POST['region']);
@@ -29,8 +29,8 @@
 		$fire_service = mysqli_real_escape_string($db_con,$_POST['fire_service']);
 		$guide = mysqli_real_escape_string($db_con,$_POST['guide']);
 		$rating = mysqli_real_escape_string($db_con,$_POST['rating']);
-	
-		$sql = "INSERT INTO place(cate_id,place_name,region,full_description,route,hotel1,hotel2,police,hospital,fire_service,guide,rating,image) 
+
+		$sql = "INSERT INTO place(cate_id,place_name,region,full_description,route,hotel1,hotel2,police,hospital,fire_service,guide,rating,image)
 			VALUES ('$cate_id','$place_name','$region','$full_description','$route','$hotel1','$hotel2','$police','$hospital','$fire_service','$guide','$rating','$filename')";
 		$run = mysqli_query($db_con,$sql);
 				if($run){
@@ -42,13 +42,13 @@
 				{
 					echo 'query error';
 				}
-		
+
 	}
 	else
 	{
 		echo "connection problem";
 	}
-	
+
 ?>
 
 <!D0CTYPE html>
@@ -56,12 +56,12 @@
 	<head>
 		<meta name="viewport" content="width=device-width;initial-scale:1.0">
 		<title>Lets_Travel_Bangladesh</title>
-		<link rel="stylesheet" type="text/css" href="ad_place.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/ad_place.css">
 	</head>
 	<body style="background-color:#170706">
 		<div class="form">
 				<div class="container"><h1><b style="color:DarkRed">Place Information</b></h1>
-					<form action="Ad_Place.php" method="post" enctype="multipart/form-data">				
+					<form action="Ad_Place.php" method="post" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-25">
 								<label for="cate_id"><b>Place Category</b></label>
@@ -166,15 +166,15 @@
 							 <input type="file" name="uploadfile"/>
 							</div>
 						</div>
-						
-				
-						
+
+
+
 						<div class="row">
 							<input type="submit" name="submit_log" value="Add Place"/><br></br><br>
 						</div>
-						
+
 					</form>
 				</div>
-		</div>				
+		</div>
 	</body>
 </html>

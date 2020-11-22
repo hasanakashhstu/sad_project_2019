@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Search_Result</title>
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/tooplate-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
-	
+
 </head>
 <body>
  <div id="page-wraper" style="background-color:white">
@@ -27,7 +27,7 @@
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
 			<div class="image">
-              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+              <a href="#"><img src="images/bangladesh.jpg" alt="Bangladesh" /></a>
             </div>
 			<div class="author-content">
               <h4 style="color:black">Let's Travel Bangladesh</h4>
@@ -53,26 +53,26 @@
                 </li>
               </ul>
             </div>
-          
+
           </div>
         </div>
       </div>
 	</div>
 	<div style="width:900px;height:auto;margin-left:400px;margin-top:-20px">
 	<?php
-	
+
 	session_start();
 	$db_con = mysqli_connect('localhost','root','','lets_travel_bangladesh');
-		
+
 	if(isset($_POST['submit']))
-	{ 
+	{
 		$search_content = mysqli_real_escape_string($db_con,$_POST['search_by_place']);
 		$query ="select * from place where place_name='$search_content'";
 		$result = mysqli_query($db_con,$query);
 		$count=mysqli_num_rows($result);
 		if( $count>0)
 		{
-		
+
 			while($row = mysqli_fetch_array($result) )
 			{
 				echo"<h1 align='center' id=".$row['place_name']."></br><p style='color:DarkRed'><b>".$row['place_name']."</b></p></h1>";
@@ -85,7 +85,7 @@
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-13px'><b style='color:DarkRed'>Police Station : </b><b>"."&nbsp".$row['police']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Hospital : </b><b>".$row['hospital']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Fire-Service and Rescue : </b><b>".$row['fire_service']."</b></p>";
-			 
+
 				$image = $row['image'];
 				echo '<img src="image/'.$image.'" height="500" width="100%">"</br></br></br>';
 				echo '___________________________________________________________________________________________________________';
@@ -97,7 +97,7 @@
 		}
 	}
 	if(isset($_POST['submit2']))
-	{ 
+	{
 		$search_content = mysqli_real_escape_string($db_con,$_POST['region']);
 		if ($search_content=='Dhaka'){
 			$query ="select * from place where region='Dhaka'";
@@ -126,13 +126,13 @@
 		else
 				{
 			echo"<h2><p style='margin-top:300px;margin-left:100px;color:black'><b>No result was found at the moment.</b></p></h2>";
-		}	
-	
+		}
+
 		$result = mysqli_query($db_con,$query);
 		$count = mysqli_num_rows($result);
 		if( $count>0)
 		{
-		
+
 			while($row = mysqli_fetch_array($result) )
 			{
 				echo"<h1 align='center' id=".$row['place_name']."></br><p style='color:DarkRed'><b>".$row['place_name']."</b></p></h1>";
@@ -145,7 +145,7 @@
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-13px'><b style='color:DarkRed'>Police Station : </b><b>"."&nbsp".$row['police']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Hospital : </b><b>".$row['hospital']."</b></p>";
 				echo "<p style='text-align:Justify;margin-left:22px;color:black;margin-top:-25px'><b style='color:DarkRed'>Fire-Service and Rescue : </b><b>".$row['fire_service']."</b></p>";
-			 
+
 				$image = $row['image'];
 				echo '<img src="image/'.$image.'" height="500" width="100%">"</br></br></br>';
 				echo '___________________________________________________________________________________________________________';
@@ -164,7 +164,7 @@
 			$count=mysqli_num_rows($result);
 			if( $count>0)
 			{
-			while($row = mysqli_fetch_array($result)) 
+			while($row = mysqli_fetch_array($result))
 			{
 					 echo"<h1 align='center' id=".$row['place_name']."></br><p style='color:DarkRed'><b style='color:DarkRed'>".$row['place_name']."</b></br></p></h1>";
 					 echo "<h3><b style='color:DarkRed'>Emergency Contact</b></h3>";
@@ -182,7 +182,7 @@
 		}
 	}
 ?>
-	
+
 	</div>
 </div>
 

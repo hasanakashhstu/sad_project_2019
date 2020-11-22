@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Current Events</title>
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="assets/css/tooplate-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
- 
+
 </head>
 <body>
  <div id="page-wraper" style="background-color:white">
- 
+
        <div class="side">
         <div class="responsive-nav">
         <i class="fa fa-bars" id="menu-toggle"></i>
@@ -27,7 +27,7 @@
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
             <div class="image">
-              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+              <a href="#"><img src="images/bangladesh.jpg" alt="Bangladesh" /></a>
             </div>
 		  <div class="author-content">
               <h4 style="color:white">Let's Travel Bangladesh</h4>
@@ -35,13 +35,13 @@
             </div>
             <nav class="main-nav"  role="navigation">
               <ul class="main-menu">
-			  <li><a href="main.php" style="color:SparkleBlue">HOME</a><br></br>
+			  <li><a href="in.php" style="color:SparkleBlue">HOME</a><br></br>
                	    <?php
 
 
  mysqli_select_db($conn,"event_group");
 $result = mysqli_query($conn,"select * FROM  event_group");
-while($row = mysqli_fetch_array($result) 
+while($row = mysqli_fetch_array($result)
 	){
                 echo"<li style='color:SparkleBlue'><a href=#".$row['event_name'].">".$row['event_name']."</a></li>";
 				}
@@ -59,7 +59,7 @@ while($row = mysqli_fetch_array($result)
 
  mysqli_select_db($conn,"event_group");
 $result = mysqli_query($conn,"select * FROM event_group");
-while($row = mysqli_fetch_array($result) 
+while($row = mysqli_fetch_array($result)
 	){
 		 echo "<h2 align='center' id=".$row['event_name']."></br><p style='color:DarkRed'><b>".$row['event_name']."</b></h2></p>";
 		 echo "<p style='color:black;text-align:Justify;margin-left:20px'><b >".$row['event_info']."</b></p>";
@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($result)
 }
 ?>
           </div>
-       
+
 		</section>
 </div>
 

@@ -1,7 +1,7 @@
 <?php include("dbconn.php"); ?>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Agency</title>
@@ -32,7 +32,7 @@
 			  background-color: #dddddd;
 			}
 </style>
- 
+
 </head>
 <body>
  <div id="page-wraper" style="background-color:white">
@@ -42,20 +42,20 @@
         <div id="menu" class="menu" style="background-color:GREEN">
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
-		  
+
 		  <div class="image">
-              <a href="#"><img src="bangladesh.jpg" alt="Bangladesh" /></a>
+              <a href="#"><img src="images/bangladesh.jpg" alt="Bangladesh" /></a>
             </div>
             <div class="author-content">
               <h4 style="color:white">Let's Travel Bangladesh</h4>
               <span style="color:black"><b>Site Scenes Of Beautiful Bangladesh</b></span>
             </div></br>
-		  
-		  
+
+
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
-			  <li style="color:sparkleBlue"><a href="main.php"> HOME</a></li>
-               	    
+			  <li style="color:sparkleBlue"><a href="index.php"> HOME</a></li>
+
               </ul>
             </nav>
           </div>
@@ -69,7 +69,7 @@
 <?php
 $connect = mysqli_connect('localhost','root','','lets_travel_bangladesh');
 if(!$connect){
-	die(mysqli_error());	
+	die(mysqli_error());
 }
 mysqli_select_db($connect,"place");
 $results = mysqli_query($connect,"SELECT place_name,rating FROM place");
@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($results) ){
 }
 	   echo"</td>";
 	   echo"</tr>";
-	   
+
 }
 echo"</table>";
 ?>
